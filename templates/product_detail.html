@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>Anuj Sir Myntra</title>
+    
+    <style>
+        .container-fluid{
+                 background-color: black;
+             }
+             .l1{
+                 color:white;
+             }
+             .l2{
+                 color: red;
+             }
+             .logo_text_decoration{
+                text-transform: uppercase;
+                 font-size: 30px;
+                 font-weight: bold;
+             }
+             .nav-link{
+                 color:white;
+             }
+             a{
+                 display: block;
+                 font-size: 18px;
+                 font-weight: bold;
+             }
+             a:hover{
+                 color:white;
+                 border-bottom: 4px solid red;
+             }
+             .active1{
+                border-bottom: 4px solid red;
+             }
+             .banner{
+                 background: url('./image/slide_01.jpg') no-repeat 0 0;
+                 background-size: cover;
+                 height: 100vh;
+             }
+             h2{
+                 color:red;
+             }
+             h1{
+                 color: white;
+                 font-size:40px;
+             }
+             h1,h2{
+                 position: relative;
+                 top: 35%;
+                 font-weight: bold;
+             }
+             .heading{
+                 font-size: 20px;
+                 font-weight: bold;
+                 padding-bottom: 20px;
+                 border-bottom: 1px solid lightgray;
+             }
+             .sub-section img{
+                 width: 100%;
+                 height: 200px;
+             }
+             .tag{
+                 padding:10px;
+                 font-size: 20px;
+             }
+             .sub-section p{
+                 clear: both;
+                 padding: 10px;
+             }
+             .checked{
+                 color: orangered;
+             }
+            .tag-line{
+                border-bottom: 1px solid lightgray;
+            }
+            .aboutus ul{
+                margin: 0;
+                padding: 15px;
+            }
+            .aboutus ul li{
+                line-height: 30px;
+            }
+            #read-more:hover{
+                background-color: black;
+            }
+            .button-position{
+                text-align: end;
+            }
+            .carousel-inner{
+                max-height: 400px;
+                width:px;
+            }
+            .pink{
+                background-color:pink;
+            }
+            .red {
+                background-color: red;
+            }
+            .black {
+                background-color: black;
+            }
+            .green {
+                background-color: green;
+            }
+            .single-product {
+                margin-top: 80ps;
+                margin-left: 100px;
+            }
+            .single-product .col-2 img{
+                padding: 0;                
+            }
+            .single-product .col-2{
+                padding: 50px;
+                margin-left: 20px;
+            }
+            .small-img-row{
+                display: flex;
+            }
+            .small-img-col{
+                flex-basis: 24%;
+                cursor: pointer;
+            }
+            
+            
+                
+            
+        
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid"> 
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4 py-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="{% static 'image/menu-burger.jpg' %}" alt="Image" style="width:40px;">
+                    </a>
+                    <label class="l1 logo_text decoration">Anuj</label>
+                    <label class="l2 logo_text decoration">Clothing</label>
+                </div>
+                
+                <nav class="col-md-8 nav pt-10 ">
+                    <form class="form-inline justify-content-left" style= 'margin: 10px;' action="post">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                    
+                
+
+                    <a href="#"class="nav-link active1 bg-warning">Home</a>
+                    <a href="#"class="nav-link">MEN</a>
+                    <a href="#"class="nav-link">Women</a>
+                    <a href="#"class="nav-link">KIDS</a>
+                    <a href="#"class="nav-link">BEAUTY</a>  
+                </nav>
+
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <div id="carouselblock" class="carousel slide" data-ride="carousel">
+                    <ol class='carousel-indicators'>
+                        <li data-target="#carouselblock" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselblock" data-slide-to="1"></li>
+                        <li data-target="#carouselblock" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'image/carosalbb.jpg' %}" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'image/carosalee.jpg' %}" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'image/carosalff.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                    <a href="#carouselblock" class="carousel-control-prev" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#carouselblock" class="carousel-control-next" data-slide="next">
+                        <span class='carousel-control-next-icon'></span>
+                    </a>        
+
+                </div>
+
+            </div>
+        </div>
+    </div><br><br><br>
+    <!--single product details-->
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-6">
+                <img src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/6/11/b4f066c6-c0c4-4732-a28d-6aea225b16711623411002817-2.jpg" id="ProductImg">
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/15866730/2021/10/19/26c9308e-d7fe-41bd-a52f-a64480e634da1634655290393Sarees1.jpg" class="small-img" width="100%">
+                    </div>
+                     <div class="small-img-col">
+                        <img src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/5/19/09ebf659-7c29-439f-8078-29e02f1022a01621400291632-1.jpg" class="small-img" width="100%">
+                    </div>
+                     <div class="small-img-col">
+                        <img src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/6/25/bbf85379-50fd-4f7b-9561-3b23abd3c75d1624641712671-1.jpg" class="small-img" width="100%">
+                    </div>
+                     <div class="small-img-col">
+                        <img src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/12631352/2020/10/23/34ef4663-7378-41f5-b386-698417913b7c1603435727535-Inddus-Women-Sarees-1371603435725076-1.jpg" class="small-img" width="100%">
+                    </div>
+                </div>
+            </div>   
+            <div class="col-6">
+                <p> Home /Saree</p>
+                <h6>Skin color</h6>
+                <h6>RS.1599</h6>
+                <select>
+                    <option value="Size">Select Size</option>
+                    <option>XML</option>
+                    <option>XL</option>
+                    <option>Large</option>
+                    <opttion>Medium</option>
+                    <option>Small</option>
+                <select><br>
+                <br><input type="number" value="1"><hr>
+                <a href="" class="btn btn-secondary">Add to Cart</a><br>
+                <br><h6>Product Details <i class="fa fa-indent"></i></h6>
+                <p>Magenta banarasi woven design saree and has a solid border Blouse Piece
+                         The model is wearing a stitched version of the blouse
+                </p>         
+            </div>
+        </div>
+    </div>   
+
+    
+   
+    
+   
+
+      
+    <div class="container mt-5 border-bottom pd-5">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="text-primary">Creative & unique Sixteen products</label>
+                <p>Lorem ipsum dolor sit amet consectetur elit</p>
+            </div>
+            <div class='col-md-4 offset-2 button-position'>
+                <button class="btn btn-danger">Purchase Now</button>
+            </div>
+        </div>    
+    </div>
+    <div class="container mt-5 pb-5">
+        <div class="row">
+            <div class="col text-center">
+                Copyright @ 2020 sixten clothing co, Ltd 
+            </div>
+        </div>
+    </div>
+    
+<!--js for product gallery-->
+    <script>
+    var ProductImg = document.getElementById("ProductImg");
+    var SmallImg = document.getelementByClassName("small-img");
+        smallImg[0].onclick = function()
+        {
+            ProductImg.src = smallImg[0].src;
+        }
+        smallImg[1].onclick = function()
+        {
+            ProductImg.src = smallImg[1].src;
+        }
+        smallImg[2].onclick = function()
+        {
+            ProductImg.src = smallImg[2].src;
+        }
+        smallImg[3].onclick = function()
+        {
+            ProductImg.src = smallImg[3].src;
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

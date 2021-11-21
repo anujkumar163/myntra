@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Signup Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+	    	<div class="col-sm-6 bg-success">
+				<h1>Signup Here!</h1>
+			<form method="post" align="center">
+				{% csrf_token %}
+				
+				<div class="form-group">
+		        	<input type="text" class="form-control" name="nm" placeholder="Enter Name">
+		        </div>
+				
+				<div class="form-group">
+		        	<input type="text" class="form-control" name="un" placeholder="Enter UserName">
+		        </div>
+				
+				<div class="form-group">
+		        	<input type="password" class="form-control" name="pwd" placeholder="Enter Password">
+		        </div>
+                <div class="form-group">
+		        	<input type="password" class="form-control" name="pwd" placeholder="DOB">
+		        </div>
+		        <div class="form-group">
+		        	seller: <input type="radio" class="form-control" name="role" placeholder="Seller">
+		        </div>
+		        <div class="form-group">
+		        	Buyer: <input type="radio" class="form-control" name="role" placeholder="Buyer">
+		        </div>
+				
+				Signup: <input type="submit" value="Signup">
+				<button type="submit" formaction="/login/" class="btn btn-info">Sign Up</button>
+			</form>
+			</div>
+		</div>
+	</div>		
+</body>
+</html>

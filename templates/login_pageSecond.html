@@ -1,0 +1,154 @@
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <style>
+          small{
+              color:red;
+          }
+      </style>
+      <script>
+        function validateUserName(){
+           var status = true;
+           var username = document.getElementById("username").value;
+           var usernameError = document.getElementById("usernameError");
+           if(username.length == 0){
+             usernameError.innerHTML = "Username required";
+             status = false;
+           }
+           else
+             usernameError.innerHTML = "";
+           return status;
+        }
+        function validatePassword(){
+          var status = true;
+          /*
+           1) Is Empty condition
+           2) 6-10 letter
+         */
+          var password = document.getElementById("password").value;
+          
+          var passwordError = document.getElementById("passwordError");
+          
+          // at least 8 letter
+          // at least one uppercase
+          // at least one lower case
+          // at one special symbol
+          var regEx = "^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$";
+  
+          var result = password.match(regEx);
+          if(result == null){
+              passwordError.innerHTML = "Password must containt at lest 8 letter 1 uppercase 1 lowercase and 1 special charachter";
+              status = false;
+          }
+          else
+            passwordError.innerHTML = "";
+          /*
+          if(password.length == 0){
+              status = false;
+              passwordError.innerHTML = "Password required";
+          }
+          else if(password.length<6 || password.length>10){
+              status = false;
+              passwordError.innerHTML = "Password should be 6 to 10 letter long";
+          }
+          else
+            passwordError.innerHTML = "";
+          */
+            return status;
+  
+        }
+  
+        function validateMobileNumber(){
+            var status = true;
+            /*
+              1) Empty condition
+              2) length should be 10
+              3) only digit allowed
+            */
+           var mobileNumber  = document.getElementById("mobile").value;
+           var mobileError = document.getElementById("mobileError");
+           
+           if(mobileNumber.length == 0){
+               status = false;
+               mobileError.innerHTML = "Mobile number required";
+           }
+           else if(mobileNumber.length !=10){
+               status = false;
+               mobileError.innerHTML = "Mobile must containt 10 digit";
+           }
+           else if(isNaN(mobileNumber)){
+               status = false;
+               mobileError.innerHTML = "Only digit allowed";
+           }
+           else
+             mobileError.innerHTML = "";
+           return status;
+        }
+        function validateData(){
+            var status = true;
+            var usernameStatus = validateUserName();
+            if(usernameStatus == false)
+             status = false;
+  
+            var passwordStatus = validatePassword();    
+            if(passwordStatus == false)
+              status = false;
+  
+            var mobileStatus = validateMobileNumber();
+            if(mobileStatus == false)
+             status = false;
+           
+            if(status)
+             alert("Registration Success");
+              
+            return status;
+        }
+        function showPassword(){
+            var passwordInputField = document.getElementById("password");
+            passwordInputField.type = "text";
+        }
+      </script> 
+   </head>
+    <body>
+        <div class="container">
+        <div class="row">
+	    	<div class="col-sm-6 bg-warning">
+			<h1>Login Here!</h1>
+            <form method="post">
+              {% csrf_token %}
+                <div class="form-group ">
+                    <label>Username</label>
+                    <input onkeyup="validateUserName()" type="text" id="username" class="form-control" name="un"/>
+                    <small id="usernameError"></small>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input onkeyup = "validatePassword()" type="password" id="password" class="form-control" name="pwd"/>
+                    <small id="passwordError"></small>
+                    <span onclick="showPassword()">Show password</span>
+                    
+                </div>
+                <div class="form-group">
+                  <label>Mobile number</label>
+                  <input onkeyup="validateMobileNumber()" type="text" class="form-control" name="mob" id="mobile"/>
+                  <small id="mobileError"></small>
+                </div>
+                <div class="form-group">
+                    <button onclick="return validateData()" type="submit" formaction="/home/" class="btn btn-primary" name="button">Register</button>
+                </div>
+                <div class="form-group">
+                    <button onclick="return validateData()" type="submit" formaction="/login_call/" class="btn btn-primary" name="button">GO TO</button>
+                </div>
+
+
+
+
+                
+            </form>
+            </div>
+            </div>
+        </div>
+    </body>
+  </html>
+  

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>Anuj Sir Templet</title>
+    <style>
+        .container-fluid{
+                 background-color: black;
+             }
+             .l1{
+                 color:white;
+             }
+             .l2{
+                 color: red;
+             }
+             .logo_text_decoration{
+                text-transform: uppercase;
+                 font-size: 30px;
+                 font-weight: bold;
+             }
+             .nav-link{
+                 color:white;
+             }
+             a{
+                 display: block;
+                 font-size: 18px;
+                 font-weight: bold;
+             }
+             a:hover{
+                 color:white;
+                 border-bottom: 4px solid red;
+             }
+             .active1{
+                border-bottom: 4px solid red;
+             }
+             .banner{
+                 background: url('./image/slide_01.jpg') no-repeat 0 0;
+                 background-size: cover;
+                 height: 100vh;
+             }
+             h2{
+                 color:red;
+             }
+             h1{
+                 color: white;
+                 font-size:40px;
+             }
+             h1,h2{
+                 position: relative;
+                 top: 35%;
+                 font-weight: bold;
+             }
+             .heading{
+                 font-size: 20px;
+                 font-weight: bold;
+                 padding-bottom: 20px;
+                 border-bottom: 1px solid lightgray;
+             }
+             .sub-section img{
+                 width: 100%;
+                 height: 200px;
+             }
+             .tag{
+                 padding:10px;
+                 font-size: 20px;
+             }
+             .sub-section p{
+                 clear: both;
+                 padding: 10px;
+             }
+             .checked{
+                 color: orangered;
+             }
+            .tag-line{
+                border-bottom: 1px solid lightgray;
+            }
+            .aboutus ul{
+                margin: 0;
+                padding: 15px;
+            }
+            .aboutus ul li{
+                line-height: 30px;
+            }
+            #read-more:hover{
+                background-color: black;
+            }
+            .button-position{
+                text-align: end;
+            }
+            .carousel-inner{
+                max-height: 400px;
+                width:px;
+            }
+            .pink{
+                background-color:pink;
+            }
+            .red {
+                background-color: red;
+            }
+            .black {
+                background-color: black;
+            }
+            .green {
+                background-color: green;
+            }
+            
+            
+                
+            
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="container-fluid"> 
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-2 py-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="{% static 'image/menu-burger.jpg' %}" alt="Image" style="width:40px;">
+                    </a>
+                    <label class="l1 logo_text decoration">Anuj</label>
+                    <label class="l2 logo_text decoration">Clothing</label>
+                </div>
+                
+                <nav class="col-md-8 nav pt-10 ">
+                    <form class="form-inline justify-content-left" style= 'margin: 10px;' action="post">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                    
+                
+
+                    <a href="#"class="nav-link active1 ">Home</a>
+                    <a href="#"class="nav-link">MEN</a>
+                    <a href="#"class="nav-link">Women</a>
+                    <a href="#"class="nav-link">KIDS</a>
+                    <a href="#"class="nav-link">BEAUTY</a>  
+                </nav>
+
+                 <form action="{% url 'webpage0' %}">  
+                    <a href="{% url 'webpage0' %}"> <input type="submit" value="Login"/></a> 
+                 </form> <br><br>
+                 <br><form action="{% url 'webpage1' %}">  
+                    <a href="{% url 'webpage1' %}"> <input type="submit" value="signup"/></a> 
+                 </form>  
+                 
+
+            </div>    
+        </div>
+
+{% block 'navigation' %}
+
+{% if messages %}
+    {% for i in messages %}
+        <script type="text/javascript">alert('{{ i }}')</script>
+    {% endfor %}
+
+
+{% endif %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+               <!-- <a class="navbar-brand" href="#!">{{ request.user }}</a>-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                                <li><a class="dropdown-item" href="/logout/">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" action="/buyer/cartdetails/">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">{{cnt}}</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        {% endblock %}
+
+{% block 'content' %}
+<div class="container-fluid">
+    <table class="table table-hover">
+        <form method="post" action="/buyer/cartcalculate/">{% csrf_token %}
+        <tr>
+            <th >Product</th>
+            <th >Price</th>
+            <th >Quanity</th>
+            <th >Delete</th>
+        </tr> 
+        {% for i in pobjs %}
+        <tr>                          
+            <td>{{ i.title }}</td>
+            <td>{{ i.price }}</td>
+            <td><input type="number" name="pqty"><input type="hidden" name="pid" value="{{i.id}}"><input type="hidden" name="price" value="{{i.price}}"></td>
+            <td><a href="{% url 'buyer:delcart' id=i.id %}">delete</a></td>
+        </tr>
+        {% endfor %}   
+        <tr>
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td><input type="submit" value="checkout"></td> 
+        </tr>
+        </form>                       
+    </table>
+</div>
+{% endblock %}
+ </div>
+    <div class="container">
+        <div class="row mt-5 tag-line pb-3">
+            <div class="col">
+                <h4>Anuj clothing</h4>
+            </div>
+        </div>
+    </div>
+    <div class="container border-bottom pd-5">
+        <div class="row">
+            <div class="col-md-6 pt-5 aboutus">
+                <label class="text-primary">Looking for the best products?</label>
+                <p>here are the some famous product details.</p>
+                <ul>
+                    <li>Banarshi Sarees.</li>
+                    <li>Allabhab Sarees.</li>
+                    <li>Jupuri Sarees.</li>
+                    <li>Himanchali Sarees.</li>
+                    <li>Manipuri Sarees.</li>
+                </ul>
+                <button id="read-more" class="btn btn-danger">Read More</button>
+            </div>
+            <div class="col-md-6 pt-5">
+                <img src="./image/feature-image.jpg"/>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="container mt-5 border-bottom pd-5">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="text-primary">Creative & unique Anuj products</label>
+                <p>Lorem ipsum dolor sit amet consectetur elit</p>
+            </div>
+            <div class='col-md-4 offset-2 button-position'>
+                <button class="btn btn-danger">Purchase Now</button>
+            </div>
+        </div>    
+    </div>
+    <div class="container mt-5 pb-5">
+        <div class="row">
+            <div class="col text-center">
+                Copyright @ 2020 Anuj clothing co, Ltd 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

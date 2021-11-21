@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>Anuj Sir Templet</title>
+    <style>
+        .container-fluid{
+                 background-color: black;
+             }
+             .l1{
+                 color:white;
+             }
+             .l2{
+                 color: red;
+             }
+             .logo_text_decoration{
+                text-transform: uppercase;
+                 font-size: 30px;
+                 font-weight: bold;
+             }
+             .nav-link{
+                 color:white;
+             }
+             a{
+                 display: block;
+                 font-size: 18px;
+                 font-weight: bold;
+             }
+             a:hover{
+                 color:white;
+                 border-bottom: 4px solid red;
+             }
+             .active1{
+                border-bottom: 4px solid red;
+             }
+             .banner{
+                 background: url('./image/slide_01.jpg') no-repeat 0 0;
+                 background-size: cover;
+                 height: 100vh;
+             }
+             h2{
+                 color:red;
+             }
+             h1{
+                 color: white;
+                 font-size:40px;
+             }
+             h1,h2{
+                 position: relative;
+                 top: 35%;
+                 font-weight: bold;
+             }
+             .heading{
+                 font-size: 20px;
+                 font-weight: bold;
+                 padding-bottom: 20px;
+                 border-bottom: 1px solid lightgray;
+             }
+             .sub-section img{
+                 width: 100%;
+                 height: 200px;
+             }
+             .tag{
+                 padding:10px;
+                 font-size: 20px;
+             }
+             .sub-section p{
+                 clear: both;
+                 padding: 10px;
+             }
+             .checked{
+                 color: orangered;
+             }
+            .tag-line{
+                border-bottom: 1px solid lightgray;
+            }
+            .aboutus ul{
+                margin: 0;
+                padding: 15px;
+            }
+            .aboutus ul li{
+                line-height: 30px;
+            }
+            #read-more:hover{
+                background-color: black;
+            }
+            .button-position{
+                text-align: end;
+            }
+            .carousel-inner{
+                max-height: 400px;
+                width:px;
+            }
+            .pink{
+                background-color:pink;
+            }
+            .red {
+                background-color: red;
+            }
+            .black {
+                background-color: black;
+            }
+            .green {
+                background-color: green;
+            }
+            
+            
+                
+            
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="container-fluid"> 
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-2 py-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="{% static 'image/menu-burger.jpg' %}" alt="Image" style="width:40px;">
+                    </a>
+                    <label class="l1 logo_text decoration">Anuj</label>
+                    <label class="l2 logo_text decoration">Clothing</label>
+                </div>
+                
+                <nav class="col-md-8 nav pt-10 ">
+                    <form class="form-inline justify-content-left" style= 'margin: 10px;' action="post">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                    
+                
+
+                    <a href="#"class="nav-link active1 ">Home</a>
+                    <a href="#"class="nav-link">MEN</a>
+                    <a href="#"class="nav-link">Women</a>
+                    <a href="#"class="nav-link">KIDS</a>
+                    <a href="#"class="nav-link">BEAUTY</a>  
+                </nav>
+
+                 <form action="{% url 'webpage0' %}">  
+                    <a href="{% url 'webpage0' %}"> <input type="submit" value="Login"/></a> 
+                 </form> <br><br>
+                 <br><form action="{% url 'webpage1' %}">  
+                    <a href="{% url 'webpage1' %}"> <input type="submit" value="signup"/></a> 
+                 </form>  
+                 
+
+            </div>    
+        </div>
+        
+        
+        <div class="row">
+            <div class="col">
+                <div id="carouselblock" class="carousel slide" data-ride="carousel">
+                    <ol class='carousel-indicators'>
+                        <li data-target="#carouselblock" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselblock" data-slide-to="1"></li>
+                        <li data-target="#carouselblock" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'image/carosalaa.jpg' %}" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                           <img src="{% static 'image/carosalbb.jpg' %}" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'image/carosalcc.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                    <a href="#carouselblock" class="carousel-control-prev" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#carouselblock" class="carousel-control-next" data-slide="next">
+                        <span class='carousel-control-next-icon'></span>
+                    </a>        
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+   
+    
+    <div class="container">
+        <div class="row section mt-4">
+                <div class="col-md-2 sub-section">
+                <div> 
+                <form>
+                    <h6>Brand</h6>
+                    <input type="checkbox" id="" name="vehicle1" value="Bike">
+                    <label for="">Pothys</label><br>
+                    <input type="checkbox" id="" name="vehicle2" value="Car">
+                    <label for="">KALNI</label><br>
+                    <input type="checkbox" id="" name="vehicle3" value="Boat">
+                    <label for="">Mitera</label><br>
+                    <input type="checkbox" id="" name="vehicle0" value="Bike">
+                    <label for="">Unnati</label><br>
+                    <input type="checkbox" id="" name="vehicle2" value="Car">
+                    <label for="">Chennai</label><br>
+                    <input type="checkbox" id="" name="vehicle3" value="Boat">
+                    <label for="">Vastranand</label>
+                </form>
+                <br>
+                <form>
+                <h6>Price</h6>
+                    <input type="radio" id="" name="fav_language" value="">
+                    <label for="html">Rs.304 to RS.8727</label><br>
+                    <input type="radio" id="" name="fav_language" value="">
+                    <label for="css">RS.8727 to RS.17499</label><br>
+                    <input type="radio" id="" name="fav_language" value="">
+                    <label for="javascript">RS17499 to RS.25499.</label>
+                </form>
+                </div>
+                </div>
+                <div class="col-md-2 sub-section">
+                   <img src="{% static 'image/saree1.jpg' %}" alt="Image">
+                   <div class="pl-3 pr-3 border  pb-3"> 
+                     <span class="float-left font-weight-bold text-primary tag">Mitera</span>
+                     <h6>Leheriya Kota</h6>
+                     <span class="float-right font-weight-bold tag">RS.1559 (47% OFF)</span>
+                     <button class="btn btn-danger" style= 'margin-bottom: 15px;' >Size</button>
+                    
+                     
+                     <form action="{% url 'webpage2' %}">  
+                       <a href="{% url 'webpage0' %}"> <input type="submit" value="Detail"/></a> 
+                     </form>                    
+                     <span class="fa fa-star checked" style="padding-left:10px;"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="p-0 float-right text-danger" style="padding:10px">Review(48)</span>
+                   </div>
+                </div>
+                <div class="col-md-2 sub-section">
+                   <img src="{% static 'image/saree2.jpg' %}" alt="Image">
+                   <div class="pl-3 pr-3 border  pb-3"> 
+                     <span class="float-left font-weight-bold text-primary tag">Sangria</span>
+                     <h6>Embellished Pure</h6>
+                     <span class="float-right font-weight-bold tag">RS.2013 (47% OFF)</span>
+                     <button class="btn btn-danger" style= 'margin-bottom: 15px;' >Size</button>
+                      <form action="{% url 'webpage2' %}">  
+                       <a href="{% url 'webpage0' %}"> <input type="submit" value="Detail"/></a> 
+                     </form>   
+                     
+                     <span class="fa fa-star checked" style="padding-left:10px;"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="p-0 float-right text-danger" style="padding:10px">Review(48)</span>
+                   </div>
+                </div>
+                <div class="col-md-2 sub-section">
+                   <img src="{% static 'image/saree4.jpg' %}" alt="Image">
+                   <div class="pl-3 pr-3 border  pb-3"> 
+                     <span class="float-left font-weight-bold text-primary tag">Kalamandir</span>
+                     <h6>Floral Banarasi</h6>
+                     <span class="float-right font-weight-bold tag">RS.700 (30% OFF)</span>
+                     <button class="btn btn-danger" style= 'margin-bottom: 15px;' >Size</button>
+                     <form action="{% url 'webpage2' %}">  
+                       <a href="{% url 'webpage0' %}"> <input type="submit" value="Detail"/></a> 
+                     </form>   
+                     
+                     <span class="fa fa-star checked" style="padding-left:10px;"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="p-0 float-right text-danger" style="padding:10px">Review(48)</span>
+                   </div>
+                </div>
+                <div class="col-md-2 sub-section">
+                   <img src="{% static 'image/saree3.jpg' %}" alt="Image">
+                   <div class="pl-3 pr-3 border  pb-3"> 
+                     <span class="float-left font-weight-bold text-primary tag">Libas</span>
+                     <h6>Pure Georgette Dhoti </h6>
+                     <span class="float-right font-weight-bold tag">RS.1399 (60% OFF)</span>
+                     <button class="btn btn-danger" style= 'margin-bottom: 15px;' >Size</button>
+                     <form action="{% url 'webpage2' %}">  
+                       <a href="{% url 'webpage0' %}"> <input type="submit" value="Detail"/></a> 
+                     </form>  
+                      
+                     <span class="fa fa-star checked" style="padding-left:10px;"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="p-0 float-right text-danger" style="padding:10px">Review(48)</span>
+                   </div>
+                </div>
+
+
+
+
+
+
+                <div class="row section mt-5">
+                <div class="col-md-2 sub-section">
+                <div> 
+                    <select>
+                        <option value="">Select color</option>
+                        <option class="pink">Pink</option>
+                        <option class="red">Red</option>
+                        <option class="black">Black</option>
+                        <option class="green">Green</option>
+
+                    </select><br><br><br>
+                    
+                    <form>
+                    <h6>Brand</h6>
+                    <input type="checkbox" id="" name="vehicle1" value="Bike">
+                    <label for="">10% OFF</label><br>
+                    <input type="checkbox" id="" name="vehicle2" value="Car">
+                    <label for="">20%% OFF</label><br>
+                    <input type="checkbox" id="" name="vehicle3" value="Boat">
+                    <label for="">30% OFF</label><br>
+                    <input type="checkbox" id="" name="vehicle0" value="Bike">
+                    <label for="">40% OFF</label><br>
+                    <input type="checkbox" id="" name="vehicle2" value="Car">
+                    <label for="">60% OFF</label><br>
+                    <input type="checkbox" id="" name="vehicle3" value="Boat">
+                    <label for="">70% OFF</label>
+                </form>
+                </div>
+                </div>
+                <div class="col-md-2 sub-section">
+                   <img src="{% static 'image/saree5.jpg' %}" alt="Image">
+                   <div class="pl-3 pr-3 border  pb-3"> 
+                     <span class="float-left font-weight-bold text-primary tag">Saree mail</span>
+                     <h6>Shiped poly Ceorgette Saree</h6>
+                     <span class="float-right font-weight-bold tag">RS.1222 (50% OFF)</span>
+                     <button class="btn btn-danger" style= 'margin-bottom: 15px;' >Size</button>
+                     <form action="{% url 'webpage2' %}">  
+                       <a href="{% url 'webpage0' %}"> <input type="submit" value="Detail"/></a> 
+                     </form>  
+                
+ 
+                     <span class="fa fa-star checked" style="padding-left:10px;"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="p-0 float-right text-danger" style="padding:10px">Review(48)</span>
+                     
+                     
+                   </div>
+                </div>
+                <div class="col-md-2 sub-section">
+                   <img src="{% static 'image/saree6.jpg' %}" alt="Image">
+                   <div class="pl-3 pr-3 border  pb-3"> 
+                     <span class="float-left font-weight-bold text-primary tag">all about</span>
+                     <h6>Embroldery Georgette Saree</h6>
+                     <span class="float-right font-weight-bold tag">RS.1476 (59% OFF)</span>
+                     <button class="btn btn-danger" style= 'margin-bottom: 15px;' >Size</button>
+                     <form action="{% url 'webpage2' %}">  
+                       <a href="{% url 'webpage0' %}"> <input type="submit" value="Detail"/></a> 
+                     </form>  
+                     
+                     <span class="fa fa-star checked" style="padding-left:10px;"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="p-0 float-right text-danger" style="padding:10px">Review(48)</span>
+                   </div>
+                </div>
+                <div class="col-md-2 sub-section">
+                   <img src="{% static 'image/saree7.jpg' %}" alt="Image">
+                   <div class="pl-3 pr-3 border  pb-3"> 
+                     <span class="float-left font-weight-bold text-primary tag">Pataudi</span>
+                     <h6>Ethnic Motifs Saree</h6>
+                     <span class="float-right font-weight-bold tag">RS.1749 (30% OFF)</span>
+                     
+                     <button class="btn btn-danger" style= 'margin-bottom: 15px;' >Size</button>
+                     <form action="{% url 'webpage2' %}">  
+                       <a href="{% url 'webpage0' %}"> <input type="submit" value="Detail"/></a> 
+                     </form>  
+                     <span class="fa fa-star checked" style="padding-left:10px;"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="p-0 float-right text-danger" style="padding:10px">Review(48)</span>
+                   </div>
+                </div>
+                <div class="col-md-2 sub-section">
+                   <img src="{% static 'image/saree8.jpg' %}" alt="Image">
+                   <div class="pl-3 pr-3 border  pb-3"> 
+                     <span class="float-left font-weight-bold text-primary tag">Mitera</span>
+                     <h6>Embellished Saree</h6>
+                     <span class="float-right font-weight-bold tag">RS.1699 (45% OFF)</span>
+                      
+                     <button class="btn btn-danger" style= 'margin-bottom: 15px;' >Size</button>
+                     <form action="{% url 'webpage2' %}">  
+                       <a href="{% url 'webpage0' %}"> <input type="submit" value="Detail"/></a> 
+                     </form>   
+                     <span class="fa fa-star checked" style="padding-left:10px;"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="p-0 float-right text-danger" style="padding:10px">Review(48)</span>
+                   </div>
+                </div>
+
+                <div class="container">                 
+                <ul class="pagination justify-content-center" style="margin:20px 0">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+                </div>
+                
+
+        </div>        
+    </div>
+    <div class="container">
+        <div class="row mt-5 tag-line pb-3">
+            <div class="col">
+                <h4>Anuj clothing</h4>
+            </div>
+        </div>
+    </div>
+    <div class="container border-bottom pd-5">
+        <div class="row">
+            <div class="col-md-6 pt-5 aboutus">
+                <label class="text-primary">Looking for the best products?</label>
+                <p>here are the some famous product details.</p>
+                <ul>
+                    <li>Banarshi Sarees.</li>
+                    <li>Allabhab Sarees.</li>
+                    <li>Jupuri Sarees.</li>
+                    <li>Himanchali Sarees.</li>
+                    <li>Manipuri Sarees.</li>
+                </ul>
+                <button id="read-more" class="btn btn-danger">Read More</button>
+            </div>
+            <div class="col-md-6 pt-5">
+                <img src="./image/feature-image.jpg"/>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="container mt-5 border-bottom pd-5">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="text-primary">Creative & unique Anuj products</label>
+                <p>Lorem ipsum dolor sit amet consectetur elit</p>
+            </div>
+            <div class='col-md-4 offset-2 button-position'>
+                <button class="btn btn-danger">Purchase Now</button>
+            </div>
+        </div>    
+    </div>
+    <div class="container mt-5 pb-5">
+        <div class="row">
+            <div class="col text-center">
+                Copyright @ 2020 Anuj clothing co, Ltd 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
